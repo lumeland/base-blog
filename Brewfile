@@ -1,0 +1,2 @@
+# Install Deno
+brew "deno"
