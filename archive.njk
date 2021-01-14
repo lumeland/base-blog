@@ -1,0 +1,9 @@
+---
+layout: layouts/home.njk
+permalink: posts
+---
+
+<h1>Archive</h1>
+
+{% set postslist = search.pages("posts") %}
+{% include "postslist.njk" %}

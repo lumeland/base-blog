@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <link rel="alternate" href="{{ 'feed.xml' | url }}" type="application/atom+xml" title="{{ site.title }}">
+    <link rel="alternate" href="{{ 'feed.json' | url }}" type="application/json" title="{{ site.title }}">
+  </head>
+  <body>
+    <header>
+      <h1 class="home"><a href="{{ '/' | url }}">{{ site.title }}</a></h1>
+    </header>
+
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+
+      <!-- Delete this message -->
+      <div class="warning">
+        <ol>
+          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
+          <li>(Optional) Edit <code>_config.js</code> with your <a href="https://lumeland.github.io/getting-started/config-file/">configuration preferences</a>.</li>
+          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
+        </ol>
+        <p><em>This is an <a href="https://lumeland.github.io/">Lume project</a> "inspired" by the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+      </div>
+      <!-- Stop deleting -->
+
+      {{ content | safe }}
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: {{ url | url }} -->
+  </body>
+</html>

@@ -1,0 +1,9 @@
+---
+layout: layouts/home.njk
+---
+<h1>Tags</h1>
+
+{% for tag in search.tags("posts") %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+{% endfor %}
