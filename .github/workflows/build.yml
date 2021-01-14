@@ -18,7 +18,7 @@ jobs:
 
       - name: Run lume
         run: |
-          deno run --unstable -A https://deno.land/x/lume/cli.js
+          deno run --unstable -A https://deno.land/x/lume/cli.js --location=https://lumeland.github.io/base-blog/
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2.0.1
