@@ -9,7 +9,7 @@
     "url": "{{ site.author.url }}"
   },
   "items": [
-    {%- for post in search.pages("posts") | reverse %}
+    {%- for post in search.pages("post") | reverse %}
     {
       "id": "{{ post.data.url | url(true) }}",
       "url": "{{ post.data.url | url(true) }}",

@@ -14,8 +14,8 @@
       <h1 class="home"><a href="{{ '/' | url }}">{{ site.title }}</a></h1>
 
       <ul class="nav">
-      {%- for entry in search.pages("menu", "order") %}
-        <li class="nav-item{% if entry.data.url == url %} nav-item-active{% endif %}"><a href="{{ entry.data.url | url }}">{{ entry.data.menu or entry.data.title }}</a></li>
+      {%- for entry in search.pages("menu", "menuOrder") %}
+        <li class="nav-item{% if entry.data.url == url %} nav-item-active{% endif %}"><a href="{{ entry.data.url | url }}">{{ entry.data.menuTitle or entry.data.title }}</a></li>
       {%- endfor %}
       </ul>
     </header>

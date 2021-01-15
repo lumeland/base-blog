@@ -1,15 +1,15 @@
 ---
 layout: layouts/home.njk
 tags: menu
-menu: Home
-order: 0
+menuTitle: Home
+menuOrder: 0
 ---
 
-{% set maxPosts = search.pages("posts").length | min(3) %}
+{% set maxPosts = search.pages("post").length | min(3) %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
-{% set postslist = search.pages("posts") | head(-3) %}
-{% set postslistCounter = search.pages("posts").length %}
+{% set postslist = search.pages("post") | head(-3) %}
+{% set postslistCounter = search.pages("post").length %}
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>

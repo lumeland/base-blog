@@ -8,8 +8,8 @@ templateClass: tmpl-post
 
 <hr>
 <ul>
-  {%- set nextPost = search.nextPage(url, "posts") %}
+  {%- set nextPost = search.nextPage(url, "post") %}
   {%- if nextPost %}<li>Next: <a href="{{ nextPost.data.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- set previousPost = search.previousPage(url, "posts") %}
+  {%- set previousPost = search.previousPage(url, "post") %}
   {%- if previousPost %}<li>Previous: <a href="{{ previousPost.data.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
 </ul>

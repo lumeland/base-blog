@@ -1,5 +1,6 @@
 // import lume from "https://deno.land/x/lume/mod.js";
-import lume from "https://raw.githubusercontent.com/lumeland/lume/master/mod.js";
+// import lume from "https://raw.githubusercontent.com/lumeland/lume/master/mod.js";
+import lume from "../lume/mod.js";
 import date from "https://raw.githubusercontent.com/lumeland/lume/master/plugins/date.js";
 import postcss from "https://deno.land/x/lume/plugins/postcss.js";
 

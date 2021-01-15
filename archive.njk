@@ -3,10 +3,10 @@ layout: layouts/home.njk
 title: Archive
 permalink: posts
 tags: menu
-order: 1
+menuOrder: 1
 ---
 
 <h1>Archive</h1>
 
-{% set postslist = search.pages("posts") %}
+{% set postslist = search.pages("post") %}
 {% include "postslist.njk" %}
