@@ -13,4 +13,31 @@
 .post-body {
   font-size: 1.2em;
   line-height: 1.4;
+
+  & p,
+  & ul,
+  & ol {
+    max-width: 45em;
+  }
+
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    max-width: 20em;
+  }
+}
+.post-navigation {
+  & ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  & li {
+    padding: 1em;
+  }
 }
