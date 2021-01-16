@@ -4,7 +4,7 @@
 }
 
 .postList-date {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: var(--darkgray);
 }
 
@@ -18,6 +18,5 @@
 }
 
 .body-home .postList-title {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.2rem;
 }

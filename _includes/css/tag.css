@@ -1,9 +1,9 @@
 .tag {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   line-height: 1;
-  padding: 0.3em 0.5em 0.2em;
+  padding: 0.2em 0.5em;
   margin-right: 0.8em;
   background-color: var(--red);
   color: var(--white);

@@ -1,6 +1,6 @@
-import lume from "https://deno.land/x/lume/mod.js";
-import date from "https://deno.land/x/lume/plugins/date.js";
-import postcss from "https://deno.land/x/lume/plugins/postcss.js";
+import lume from "https://deno.land/x/lume@v0.12.1/mod.js";
+import date from "https://deno.land/x/lume@v0.12.1/plugins/date.js";
+import postcss from "https://deno.land/x/lume@v0.12.1/plugins/postcss.js";
 
 const site = lume({
   location: new URL("https://example.com/"),

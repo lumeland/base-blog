@@ -18,7 +18,7 @@
 		<link href="{{ post.data.url | url(true) }}"/>
 		<updated>{{ post.data.date | date("ATOM") }}</updated>
 		<id>{{ post.data.url | url(true) }}</id>
-		<content type="html">{{ post.data.content | md | njk | htmlUrl(true) }}</content>
+		<content type="html">{{ post.data.content | md | htmlUrl(true) }}</content>
 	</entry>
 	{%- endfor %}
 </feed>
