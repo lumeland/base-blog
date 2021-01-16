@@ -1,0 +1,23 @@
+.postList {
+  list-style: none;
+  padding: 0;
+}
+
+.postList-date {
+  font-size: 0.8em;
+  color: var(--darkgray);
+}
+
+.postList-title {
+  display: inline-block;
+  padding: 0.5em 0.2em;
+
+  &[aria-current="page"] {
+    font-weight: bold;
+  }
+}
+
+.body-home .postList-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}

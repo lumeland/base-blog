@@ -1,0 +1,71 @@
+:root {
+  --red: #C5004A;
+  --lightgray: #f2f2f2;
+  --darkgray: #333;
+  --blue: #1d3d55;
+  --white: #fff;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--darkgray);
+  background-color: var(--white);
+}
+
+main {
+  padding: 1rem;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+}
+
+a {
+  color: var(--blue);
+}
+
+/* Warning */
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.5em;
+}
+
+table {
+  margin: 1em 0;
+
+  & td,
+  & th {
+    padding-right: 1em;
+  }
+}
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  line-height: 1.5;
+}
+
+pre {
+  font-size: 0.9rem;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: .5em 0;
+  background-color: var(--lightgray);
+}
+hr {
+  border: 0;
+  border-top: solid 2px var(--lightgray);
+  margin: 3em 0;
+}

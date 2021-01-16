@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,17 +11,23 @@
     <link rel="alternate" href="{{ 'feed.json' | url }}" type="application/json" title="{{ site.title }}">
   </head>
   <body>
-    <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ site.title }}</a></h1>
+    <nav class="navbar">
+      <a href="{{ '/' | url }}" class="navbar-home">
+        <strong>{{ site.title }}</strong>
+      </a>
 
-      <ul class="nav">
+      <ul class="navbar-links">
       {%- for entry in search.pages("menu", "menuOrder") %}
-        <li class="nav-item{% if entry.data.url == url %} nav-item-active{% endif %}"><a href="{{ entry.data.url | url }}">{{ entry.data.menuTitle or entry.data.title }}</a></li>
+        <li>
+          <a href="{{ entry.data.url | url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+            {{ entry.data.menuTitle or entry.data.title }}
+          </a>
+        </li>
       {%- endfor %}
       </ul>
-    </header>
+    </nav>
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+    <main class="{{ bodyClass }}">
 
       <!-- Delete this message -->
       <div class="warning">

@@ -1,0 +1,16 @@
+.post-header {
+  padding: 2em 0;
+}
+.post-title {
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.1em;
+}
+.post-tags {
+  display: inline;
+}
+.post-body {
+  font-size: 1.2em;
+  line-height: 1.4;
+}

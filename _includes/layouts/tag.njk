@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-post
+bodyClass: body-tag
 ---
 <h1>Tagged “{{ tag }}”</h1>
 
 {% set postslist = search.pages(tag) %}
-{% include "postslist.njk" %}
+{% include "templates/postslist.njk" %}
 
 <p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>

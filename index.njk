@@ -10,6 +10,6 @@ menuOrder: 0
 
 {% set postslist = search.pages("post") | head(-3) %}
 {% set postslistCounter = search.pages("post").length %}
-{% include "postslist.njk" %}
+{% include "templates/postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>

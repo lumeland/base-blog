@@ -38,7 +38,7 @@ lume --serve
 * `posts/` has the blog posts but really they can live in any directory. The `posts/_data.yml` file adds the `post` tag to all posts
 * Add the `menu` tag to add a template to the top level site navigation. For example, this is in use on `index.njk` and `about.md`. You can configure the order with `menuOrder` and the text with `menuTitle`.
 * Content can be any template format (blog posts needn’t be markdown, for example).
-* `css` files are processed with `postcss` plugin.
+* `css` files are processed with `postcss` plugin. The imported styles are in `_includes/css`
 * `img` folder is copied as is, (keeping the same directory structure).
 * The blog post feed template is in `feed/feed.njk`. This is also a good example of using a global data files in that it uses `_data/site.yml`.
 * This example uses four layouts:
@@ -46,4 +46,5 @@ lume --serve
   * `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
   * `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
   * `_includes/layouts/tag.njk`: the tag page template (wrapped into `base.njk`)
-* `_includes/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
+* And one additional template:
+  * `_includes/templates/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.

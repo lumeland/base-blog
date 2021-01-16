@@ -1,15 +1,44 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-post
+bodyClass: body-post
 ---
-<h1>{{ title }}</h1>
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ title }}</h1>
 
-{{ content | safe }}
+    <time class="post-date" datetime="{{ date | date('DATETIME') }}">
+      {{ date | date('HUMAN_DATE') }}
+    </time>
+
+    <nav class="post-tags">
+    {% for tag in tags %}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+    </nav>
+  </header>
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+</article>
 
 <hr>
-<ul>
-  {%- set nextPost = search.nextPage(url, "post") %}
-  {%- if nextPost %}<li>Next: <a href="{{ nextPost.data.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- set previousPost = search.previousPage(url, "post") %}
-  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.data.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-</ul>
+
+<nav>
+  <ul>
+    {%- set nextPost = search.nextPage(url, "post") %}
+    {%- if nextPost %}
+    <li>
+      Next: <a href="{{ nextPost.data.url | url }}" rel="next">{{ nextPost.data.title }}</a>
+    </li>
+    {% endif %}
+
+    {%- set previousPost = search.previousPage(url, "post") %}
+    {%- if previousPost %}
+    <li>
+      Previous: <a href="{{ previousPost.data.url | url }}" rel="prev">{{ previousPost.data.title }}</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
