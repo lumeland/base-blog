@@ -9,4 +9,8 @@
   color: var(--white);
   border-radius: 0.25em;
   text-decoration: none;
+
+  &.is-big {
+    font-size: 1rem;
+  }
 }
