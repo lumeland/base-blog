@@ -1,7 +1,7 @@
 {
   "build": {
     "image": "hayd/deno",
-    "command": "deno run --unstable -A https://deno.land/x/lume/cli.js --location=https://example..on.fleek.co",
+    "command": "deno run --unstable -A https://deno.land/x/lume/cli.js --location=https://example.on.fleek.co",
     "publicDir": "_site"
   }
 }

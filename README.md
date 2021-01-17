@@ -4,47 +4,53 @@ A starter repository showing how to build a blog with the [Lume](https://github.
 
 This project started as a fork of [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) but adapted to Lume.
 
-## Demos
-
-* [GitHub Pages](https://lumeland.github.io/base-blog/)
 
 ## Getting Started
 
-### 1. Clone this Repository
-
-```
-git clone https://github.com/lumeland/base-blog.git my-blog-name
-```
-
-### 2. Navigate to the directory
-
-```
-cd my-blog-name
-```
-
-Specifically have a look at `_config.js` to see if you want to configure any option differently. See the [Lume documentation site](https://lumeland.github.io/) for more info.
-
-### 3. Edit _data/site.yml
-
-### 4. Run Lume
-
-```
-lume --serve
-```
+1. Clone this Repository `git clone https://github.com/lumeland/base-blog.git my-blog-name`
+2. Edit `_data/site.yml`. Specifically have a look at `_config.js` to see if you want to configure any option differently. See the [Lume documentation site](https://lumeland.github.io/).
+3. Run Lume `lume --serve`
 
 ### Implementation Notes
 
 * `about.md` shows how to add a content page.
 * `posts/` has the blog posts but really they can live in any directory. The `posts/_data.yml` file adds the `post` tag to all posts
-* Add the `menu` tag to add a template to the top level site navigation. For example, this is in use on `index.njk` and `about.md`. You can configure the order with `menuOrder` and the text with `menuTitle`.
-* Content can be any template format (blog posts needn’t be markdown, for example).
+* The `menu` tag adds any page to the top level site navigation. For example, this is in use on `index.njk` and `about.md`. You can configure the order with `menuOrder` and the text with `menuTitle`.
 * `css` files are processed with `postcss` plugin. The imported styles are in `_includes/css`
 * `img` folder is copied as is, (keeping the same directory structure).
-* The blog post feed template is in `feed/feed.njk`. This is also a good example of using a global data files in that it uses `_data/site.yml`.
-* This example uses four layouts:
-  * `_includes/layouts/base.njk`: the top level HTML structure
-  * `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-  * `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-  * `_includes/layouts/tag.njk`: the tag page template (wrapped into `base.njk`)
-* And one additional template:
-  * `_includes/templates/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
+* The blog post feed template is in `feed.xml.njk` and `feed.tmpl.js`.
+* This example uses four layouts stored in `_includes/layouts/`:
+  * `base.njk`: the top level HTML structure
+  * `home.njk`: the home page template (wrapped into `base.njk`)
+  * `post.njk`: the blog post template (wrapped into `base.njk`)
+  * `tag.njk`: the tag page template (wrapped into `base.njk`)
+* `_includes/templates/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
+
+## Deployment
+
+### Github Pages
+
+- [Get your own Lume blog on Github Pages](https://github.com/lumeland/base-blog/generate)
+- Open the file `.github/workflows/build.yml` and edit the `--location` option with the url of the site, for example `--location=https://username.github.io/repo/`
+- Enable Github Pages and select the branch `gh-pages` as source.
+- [See a live demo](https://lumeland.github.io/base-blog/)
+
+### Vercel
+
+- [Get your own Lume blog on Vercel](https://vercel.com/new/git/external?repository-url=https://github.com/lumeland/base-blog)
+- You need to config your the project manually with the following values:
+  - **Build Command:** `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run --unstable -A https://deno.land/x/lume/cli.js --location=https://example.vercel.app/`. Edit the `--location` option with the name of your domain.
+  - **Output directory:** `_site`
+- [See a live demo](https://lume-blog.vercel.app/)
+
+### Netlify
+
+- [Get your own Lume blog on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/lumeland/base-blog)
+- Open the `netlify.toml` file and edit the `--location=https://deno-blog.netlify.app/` option with your own domain.
+- [See a live demo](https://lume-blog.netlify.app/)
+
+### Fleek
+
+- [Import your project](https://app.fleek.co/#/start/connect-repository)
+- Open the `.fleek.json` file and edit the `--location=https://example.on.fleek.co` option with your own domain.
+- [See a live demo](https://lume-blog.on.fleek.co/)
