@@ -8,8 +8,10 @@ bodyClass: body-post
 
     <nav class="post-tags">
     {% for tag in tags %}
+      {% if tag != "post" and tag != "menu" %}
       {% set tagUrl %}/tags/{{ tag }}/{% endset %}
       <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+      {% endif %}
     {% endfor %}
     </nav>
 
