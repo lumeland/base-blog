@@ -14,7 +14,7 @@ export default function ({ site, search }, { md, url, date, htmlUrl }) {
     items: []
   };
 
-  for (const post of search.pages("post").reverse()) {
+  for (const post of search.pages("type=posts").reverse()) {
     feed.items.push({
       id: url(post.data.url, true),
       url: url(post.data.url, true),

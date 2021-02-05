@@ -17,10 +17,10 @@
       </a>
 
       <ul class="navbar-links">
-      {%- for entry in search.pages("menu", "menuOrder") %}
+      {%- for entry in search.pages("menu.visible=true", "menu.order") %}
         <li>
           <a href="{{ entry.data.url | url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
-            {{ entry.data.menuTitle or entry.data.title }}
+            {{ entry.data.menu.title or entry.data.title }}
           </a>
         </li>
       {%- endfor %}

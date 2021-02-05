@@ -2,11 +2,12 @@
 layout: layouts/home.njk
 title: Archive
 permalink: posts
-tags: menu
-menuOrder: 1
+menu:
+  visible: true
+  order: 1
 ---
 
 <h1>Archive</h1>
 
-{% set postslist = search.pages("post") %}
+{% set postslist = search.pages("type=posts") %}
 {% include "templates/postslist.njk" %}

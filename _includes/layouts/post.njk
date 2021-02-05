@@ -8,10 +8,8 @@ bodyClass: body-post
 
     <nav class="post-tags">
     {% for tag in tags %}
-      {% if tag != "post" and tag != "menu" %}
       {% set tagUrl %}/tags/{{ tag }}/{% endset %}
       <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-      {% endif %}
     {% endfor %}
     </nav>
 
@@ -29,14 +27,14 @@ bodyClass: body-post
 
 <nav class="post-navigation">
   <ul>
-    {%- set previousPost = search.previousPage(url, "post") %}
+    {%- set previousPost = search.previousPage(url, "type=posts") %}
     {%- if previousPost %}
     <li>
       ← Previous: <a href="{{ previousPost.data.url | url }}" rel="prev">{{ previousPost.data.title }}</a>
     </li>
     {% endif %}
 
-    {%- set nextPost = search.nextPage(url, "post") %}
+    {%- set nextPost = search.nextPage(url, "type=posts") %}
     {%- if nextPost %}
     <li>
       <strong>Next: <a href="{{ nextPost.data.url | url }}" rel="next">{{ nextPost.data.title }}</a> →</strong>

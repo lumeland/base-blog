@@ -1,1 +1,2 @@
-tags: post
+type: posts
+layout: layouts/post.njk

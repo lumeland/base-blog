@@ -14,10 +14,8 @@
     </time>
 
     {% for tag in post.data.tags %}
-    {% if tag != "post" and tag != "menu" %}
       {% set tagUrl %}/tags/{{ tag }}/{% endset %}
       <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-    {% endif %}
     {% endfor %}
   </li>
 {% endfor %}
