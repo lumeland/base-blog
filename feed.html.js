@@ -1,4 +1,4 @@
-export const permalink = "feed.json";
+export const url = "feed.json";
 
 export default function ({ site, search }, { md, url, date, htmlUrl }) {
   const feed = {
