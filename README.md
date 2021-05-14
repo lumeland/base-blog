@@ -23,7 +23,7 @@ Lume.
   `posts/_data.yml` file adds the `post` tag to all posts
 - The `menu` tag adds any page to the top level site navigation. For example,
   this is in use on `index.njk` and `about.md`. You can configure the order with
-  `menuOrder` and the text with `menuTitle`.
+  `menu.order` and the text with `menu.title`.
 - `css` files are processed with `postcss` plugin. The imported styles are in
   `_includes/css`
 - `img` folder is copied as is, (keeping the same directory structure).
