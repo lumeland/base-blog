@@ -4,14 +4,14 @@ export default function ({ site, search }, { md, url, date, htmlUrl }) {
   const feed = {
     version: "https://jsonfeed.org/version/1",
     title: site.title,
-    home_page_url: url('', true),
-    feed_url: url('feed.json', true),
+    home_page_url: url("", true),
+    feed_url: url("feed.json", true),
     description: site.description,
     author: {
       name: site.author.name,
-      url: site.author.url
+      url: site.author.url,
     },
-    items: []
+    items: [],
   };
 
   for (const post of search.pages("type=posts").reverse()) {
@@ -20,7 +20,7 @@ export default function ({ site, search }, { md, url, date, htmlUrl }) {
       url: url(post.data.url, true),
       title: post.data.title,
       content_html: htmlUrl(md(post.data.content), true),
-      date_published: date(post.data.date, "ATOM")
+      date_published: date(post.data.date, "ATOM"),
     });
   }
 
