@@ -2,18 +2,19 @@ import { stringify } from "lume/deps/yaml.js";
 
 export const url = "./config.yml";
 
-export default (data, {url}) => {
+export default (data, { url }) => {
   const config = {
     backend: {
       name: "git-gateway",
-      branch: "master"
+      branch: "master",
     },
     media_folder: "img",
     display_url: url("/"),
-    collections: []
+    collections: [],
   };
 
-  const posts = {
+  // Posts
+  config.collections.push({
     label: "Posts",
     name: "posts",
     description: "Here you can create or edit your posts",
@@ -25,23 +26,57 @@ export default (data, {url}) => {
         label: "Drafts",
         field: "draft",
         pattern: true,
-      }
+      },
     ],
     fields: [
-      field("Title"),
-      field("Description"),
-      field("Date", "datetime"),
-      field("Tags", "list"),
-      field("Draft", "boolean"),
-      field("Body", "markdown"),
-    ]
-  };
+      field("title"),
+      field("description"),
+      field("date", "datetime"),
+      field("tags", "list"),
+      field("draft", "boolean"),
+      field("body", "markdown"),
+    ],
+  });
 
-  config.collections.push(posts);
+  const pageFields = [
+    field("title"),
+    field("url", "string"),
+    field("body", "markdown"),
+    field("menu", "object", {
+      fields: [
+        field("visible", "boolean"),
+        field("order", "number"),
+      ],
+    }),
+    field("templateClass", "hidden"),
+    field("layout", "hidden"),
+  ];
+
+  // Individual pages
+  config.collections.push({
+    label: "pages",
+    name: "pages",
+    description: "Here you can edit your individual pages",
+    preview: false,
+    files: [
+      {
+        label: "about",
+        name: "about",
+        file: "/about.md",
+        fields: pageFields,
+      },
+      {
+        label: "404",
+        name: "404",
+        file: "/404.md",
+        fields: pageFields,
+      },
+    ],
+  });
 
   return stringify(config);
-}
+};
 
-function field(label, widget = "string", name = label.toLowerCase()) {
-  return { label, name, widget };
+function field(label, widget = "string", extra = {}) {
+  return { label, name: label.toLowerCase(), widget, ...extra };
 }

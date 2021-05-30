@@ -5,7 +5,7 @@ A starter repository showing how to build a blog with the
 
 This project started as a fork of
 [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) but adapted to
-Lume.
+Lume and with the NetlifyCMS.
 
 ## Getting Started
 
@@ -20,7 +20,8 @@ Lume.
 
 - `about.md` shows how to add a content page.
 - `posts/` has the blog posts but really they can live in any directory. The
-  `posts/_data.yml` file adds the value for `type` and `layout` fields to all posts.
+  `posts/_data.yml` file adds the value for `type` and `layout` fields to all
+  posts.
 - The `menu` field adds any page to the top level site navigation. For example,
   this is in use on `index.njk` and `about.md`. You can configure the order with
   `menu.order` and the text with `menu.title`.
@@ -33,9 +34,10 @@ Lume.
   - `home.njk`: the home page template (wrapped into `base.njk`)
   - `post.njk`: the blog post template (wrapped into `base.njk`)
   - `tag.njk`: the tag page template (wrapped into `base.njk`)
-- `_includes/templates/postlist.njk` is a Nunjucks a reusable
-  template used to display a list of all the posts. `index.njk` has an example
-  of how to use it.
+- `_includes/templates/postlist.njk` is a Nunjucks a reusable template used to
+  display a list of all the posts. `index.njk` has an example of how to use it.
+- `admin/` has the [NetlifyCMS](https://www.netlifycms.org/) configuration so
+  you can edit or create new posts using a friendly CMS.
 
 ## Deployment
 
@@ -64,6 +66,10 @@ Lume.
 - Open the `netlify.toml` file and edit the
   `--location=https://deno-blog.netlify.app/` option with your own domain.
 - [See a live demo](https://lume-blog.netlify.app/)
+- If you want to use NetlifyCMS:
+  - Activate the Identity service in your Netlify settings panel.
+  - Activate the Git Gateway.
+  - Invite the users to edit the content.
 
 ### Fleek
 
