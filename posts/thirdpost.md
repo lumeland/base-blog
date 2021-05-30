@@ -11,17 +11,16 @@ Iterative approaches to corporate strategy foster collaborative thinking to
 further the overall value proposition. Organically grow the holistic world view
 of disruptive innovation via workplace diversity and empowerment.
 
-```js/2/4
+```js
 // this is a command
 function myCommand() {
-	let counter = 0;
+  let counter = 0;
 
-	counter++;
-
+  counter++;
 }
 
 // Test with a line break above this line.
-console.log('Test');
+console.log("Test");
 ```
 
 Bring to the table win-win survival strategies to ensure proactive domination.

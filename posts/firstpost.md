@@ -23,13 +23,13 @@ beta test. Override the digital divide with additional clickthroughs from
 DevOps. Nanotechnology immersion along the information highway will close the
 loop on focusing solely on the bottom line.
 
-```text/2-3
+```js
 // this is a command
 function myCommand() {
-	let counter = 0;
-	counter++;
+  let counter = 0;
+  counter++;
 }
 
 // Test with a line break above this line.
-console.log('Test');
+console.log("Test");
 ```
