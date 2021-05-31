@@ -1,6 +1,7 @@
-import lume from "lume/mod.js";
-import date from "lume/plugins/date.js";
-import postcss from "lume/plugins/postcss.js";
+import lume from "../lume/mod.js";
+import date from "../lume/plugins/date.js";
+import postcss from "../lume/plugins/postcss.js";
+import highlight from "../lume/plugins/code_highlight.js";
 
 const site = lume({
   location: new URL("https://example.com/"),
@@ -11,6 +12,7 @@ site.copy("img");
 
 site.use(postcss());
 site.use(date());
+site.use(highlight());
 
 site.filter(
   "head",

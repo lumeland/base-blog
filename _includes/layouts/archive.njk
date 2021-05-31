@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+bodyClass: body-tag
+---
+<h1>{{ title }}</h1>
+
+{% set postslist = results %}
+{% include "templates/postslist.njk" %}
+
+<hr>
+
+<nav class="post-navigation">
+  <ul>
+    {%- if pagination.previous %}
+    <li>
+      <a href="{{ pagination.previous | url }}" rel="prev">← Previous</a>
+    </li>
+    {% endif %}
+
+    <li>
+      Page {{ pagination.page }}
+    </li>
+
+    {%- if pagination.next %}
+    <li>
+      <a href="{{ pagination.next | url }}" rel="next">Next →</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
