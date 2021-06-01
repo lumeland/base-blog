@@ -1,3 +1,6 @@
+/* Code syntax highlight */
+@import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/github-dark.min.css";
+
 @import "css/reset.css";
 @import "css/navbar.css";
 @import "css/post-list.css";

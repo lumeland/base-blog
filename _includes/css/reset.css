@@ -1,7 +1,7 @@
 :root {
   --red: #c04;
   --lightgray: #e6e6e6;
-  --darkgray: #333;
+  --darkgray: #0d1117;
   --blue: #135;
   --white: #fff;
 }
@@ -46,21 +46,9 @@ pre,
 code {
   font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
   line-height: 1.5;
+  font-size: 1rem;
 }
 
-pre {
-  font-size: 0.9rem;
-  line-height: 1.375;
-  direction: ltr;
-  text-align: left;
-  tab-size: 2;
-  hyphens: none;
-  padding: 1em;
-  margin: .5em 0;
-  background-color: var(--lightgray);
-  border-radius: 8px;
-  margin: 2em 0;
-}
 hr {
   border: 0;
   border-top: solid 2px var(--lightgray);

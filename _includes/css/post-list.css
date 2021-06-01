@@ -11,12 +11,9 @@
 .postList-title {
   display: inline-block;
   padding: 0.5em 0.2em;
+  font-size: 1.2rem;
 
   &[aria-current="page"] {
     font-weight: bold;
   }
-}
-
-.body-home .postList-title {
-  font-size: 1.2rem;
 }
