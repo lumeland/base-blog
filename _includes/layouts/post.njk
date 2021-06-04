@@ -8,8 +8,7 @@ bodyClass: body-post
 
     <nav class="post-tags">
     {% for tag in tags %}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+      <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>
     {% endfor %}
     </nav>
 
@@ -30,14 +29,14 @@ bodyClass: body-post
     {%- set previousPost = search.previousPage(url, "type=posts") %}
     {%- if previousPost %}
     <li>
-      ← Previous: <a href="{{ previousPost.data.url | url }}" rel="prev">{{ previousPost.data.title }}</a>
+      ← Previous: <a href="{{ previousPost.data.url }}" rel="prev">{{ previousPost.data.title }}</a>
     </li>
     {% endif %}
 
     {%- set nextPost = search.nextPage(url, "type=posts") %}
     {%- if nextPost %}
     <li>
-      <strong>Next: <a href="{{ nextPost.data.url | url }}" rel="next">{{ nextPost.data.title }}</a> →</strong>
+      <strong>Next: <a href="{{ nextPost.data.url }}" rel="next">{{ nextPost.data.title }}</a> →</strong>
     </li>
     {% endif %}
   </ul>

@@ -4,6 +4,5 @@ layout: layouts/base.njk
 <h1>Tags</h1>
 
 {% for tag in search.tags() %}
-  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="tag is-big">{{ tag }}</a>
+  <a href="/tags/{{ tag }}/" class="tag is-big">{{ tag }}</a>
 {% endfor %}

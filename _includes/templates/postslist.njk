@@ -1,7 +1,7 @@
 <ul class="postList">
   {% for post in postslist | reverse %}
   <li class="postList-post">
-    <a href="{{ post.data.url | url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+    <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}
         <strong>{{ post.data.title }}</strong>
       {% else %}
@@ -15,8 +15,8 @@
 
     {% for tag in post.data.tags %}
       {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+      <a href="{{ tagUrl }}" class="tag">{{ tag }}</a>
     {% endfor %}
   </li>
 {% endfor %}
-</ol>
+</ul>

@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or site.title }}</title>
     <meta name="description" content="{{ description or site.description }}">
-    <link rel="stylesheet" href="{{ '/styles.css' | url }}">
-    <link rel="alternate" href="{{ 'feed.xml' | url }}" type="application/atom+xml" title="{{ site.title }}">
-    <link rel="alternate" href="{{ 'feed.json' | url }}" type="application/json" title="{{ site.title }}">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+    <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
   </head>
   <body>
     <nav class="navbar">
-      <a href="{{ '/' | url }}" class="navbar-home">
+      <a href="/" class="navbar-home">
         <strong>{{ site.title }}</strong>
       </a>
 
       <ul class="navbar-links">
       {%- for entry in search.pages("menu.visible=true", "menu.order") %}
         <li>
-          <a href="{{ entry.data.url | url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+          <a href="{{ entry.data.url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
             {{ entry.data.menu.title or entry.data.title }}
           </a>
         </li>
@@ -33,6 +33,6 @@
 
     <footer></footer>
 
-    <!-- Current page: {{ url | url }} -->
+    <!-- Current page: {{ url }} -->
   </body>
 </html>
