@@ -14,7 +14,9 @@ Lume and with the NetlifyCMS.
 2. Edit `_data/site.yml`. Specifically have a look at `_config.js` to see if you
    want to configure any option differently. See the
    [Lume documentation site](https://lumeland.github.io/).
-3. Run Lume `lume --serve`
+3. Make sure you have the latest version of Deno and lume installed:
+   `deno upgrade && lume upgrade`
+4. Run Lume `lume --serve`
 
 ### Implementation Notes
 
