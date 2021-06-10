@@ -16,10 +16,6 @@ site.use(date());
 site.use(code_highlight());
 site.use(base_path());
 
-site.filter(
-  "head",
-  (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
-);
 site.filter("min", (...numbers) => Math.min.apply(null, numbers));
 
 export default site;
