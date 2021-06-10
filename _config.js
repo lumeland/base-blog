@@ -5,7 +5,7 @@ import code_highlight from "lume/plugins/code_highlight.js";
 import base_path from "lume/plugins/base_path.js";
 
 const site = lume({
-  location: new URL("https://example.com/"),
+  location: "https://example.com/",
 });
 
 site.ignore("README.md");
