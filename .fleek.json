@@ -1,6 +1,6 @@
 {
   "build": {
-    "image": "hayd/deno",
+    "image": "denoland/deno",
     "command": "deno run -A https://deno.land/x/lume/ci.js --location=https://example.on.fleek.co",
     "publicDir": "_site"
   }
