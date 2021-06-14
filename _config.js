@@ -11,7 +11,6 @@ const site = lume({
 
 site.ignore("README.md");
 site.copy("img");
-// site.copy("js");
 
 site.use(postcss());
 site.use(terser());
