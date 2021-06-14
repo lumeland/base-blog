@@ -12,7 +12,7 @@
 		<name>{{ site.author.name }}</name>
 		<email>{{ site.author.email }}</email>
 	</author>
-	{%- for post in search.pages("type=posts") | reverse %}
+	{%- for post in search.pages("type=posts", "date=desc", 10) %}
 	<entry>
 		<title>{{ post.data.title }}</title>
 		<link href="{{ post.data.url | url(true) }}"/>
