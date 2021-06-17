@@ -4,7 +4,7 @@ bodyClass: body-tag
 ---
 <h1>Tagged “{{ tag }}”</h1>
 
-{% set postslist = search.pages(tag) %}
+{% set postslist = search.pages("'" + tag + "'") %}
 {% include "templates/postslist.njk" %}
 
 <hr>

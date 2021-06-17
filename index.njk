@@ -6,11 +6,10 @@ menu:
   order: 0
 ---
 
-{% set maxPosts = search.pages("type=posts").length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+{% set postslist = search.pages("type=posts", "date=desc", 3) %}
 
-{% set postslist = search.pages("type=posts", "date", -3) %}
-{% set postslistCounter = search.pages("type=posts").length %}
+<h1>Latest {% if postslist.length == 1 %}Post{% else %}{{ postslist.length }} Posts{% endif %}</h1>
+
 {% include "templates/postslist.njk" %}
 
 <hr>

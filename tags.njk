@@ -3,6 +3,6 @@ layout: layouts/base.njk
 ---
 <h1>Tags</h1>
 
-{% for tag in search.tags() %}
-  <a href="/tags/{{ tag }}/" class="tag is-big">{{ tag }}</a>
+{% for page in search.pages("type=tag", "tag") %}
+  <a href="{{ page.data.url }}" class="tag is-big">{{ page.data.tag }}</a>
 {% endfor %}

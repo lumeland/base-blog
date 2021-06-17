@@ -1,5 +1,5 @@
 <ul class="postList">
-  {% for post in postslist | reverse %}
+  {% for post in postslist %}
   <li class="postList-post">
     <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}
@@ -14,8 +14,11 @@
     </time>
 
     {% for tag in post.data.tags %}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl }}" class="tag">{{ tag }}</a>
+    {% for pageTag in search.pages("type=tag") %}
+    {% if pageTag.data.tag == tag %}
+    <a href="{{ pageTag.data.url  }}" class="tag">{{ tag }}</a>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
   </li>
 {% endfor %}

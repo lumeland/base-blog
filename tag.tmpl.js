@@ -5,6 +5,7 @@ export default function* ({ search }) {
     yield {
       url: `/tags/${tag}/`,
       title: `Tagged “${tag}”`,
+      type: "tag",
       tag,
     };
   }
