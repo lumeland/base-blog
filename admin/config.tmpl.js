@@ -1,4 +1,4 @@
-import { stringify } from "lume/deps/yaml.js";
+import { stringify } from "lume/deps/yaml.ts";
 
 export const url = "./config.yml";
 
