@@ -1,10 +1,10 @@
-import lume from "lume/mod.js";
-import date from "lume/plugins/date.js";
-import postcss from "lume/plugins/postcss.js";
-import terser from "lume/plugins/terser.js";
-import code_highlight from "lume/plugins/code_highlight.js";
-import base_path from "lume/plugins/base_path.js";
-import slugify_urls from "lume/plugins/slugify_urls.js";
+import lume from "lume/mod.ts";
+import date from "lume/plugins/date.ts";
+import postcss from "lume/plugins/postcss.ts";
+import terser from "lume/plugins/terser.ts";
+import codeHighlight from "lume/plugins/code_highlight.ts";
+import basePath from "lume/plugins/base_path.ts";
+import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
 const site = lume({
   location: "https://example.com/",
@@ -16,8 +16,8 @@ site
   .use(postcss())
   .use(terser())
   .use(date())
-  .use(code_highlight())
-  .use(base_path())
-  .use(slugify_urls({ alphanumeric: false }));
+  .use(codeHighlight())
+  .use(basePath())
+  .use(slugifyUrls({ alphanumeric: false }));
 
 export default site;

@@ -57,7 +57,7 @@ Lume and with the NetlifyCMS.
 - [Get your own Lume blog on Vercel](https://vercel.com/new/git/external?repository-url=https://github.com/lumeland/base-blog)
 - You need to config your the project manually with the following values:
   - **Build Command:**
-    `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/lume/ci.js --location=https://example.vercel.app/`.
+    `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts --location=https://example.vercel.app/`.
     Edit the `--location` option with the name of your domain.
   - **Output directory:** `_site`
 - [See a live demo](https://lume-blog.vercel.app/)

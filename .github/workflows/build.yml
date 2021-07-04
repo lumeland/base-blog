@@ -18,7 +18,7 @@ jobs:
 
       - name: Run lume
         run: |
-          deno run -A https://deno.land/x/lume/ci.js --location=https://lumeland.github.io/base-blog/
+          deno run -A https://deno.land/x/lume/ci.ts --location=https://lumeland.github.io/base-blog/
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2.0.1
