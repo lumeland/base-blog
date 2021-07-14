@@ -7,7 +7,7 @@ import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
 const site = lume({
-  location: "https://example.com/",
+  location: new URL("https://example.com/"),
 });
 
 site
