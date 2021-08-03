@@ -28,4 +28,6 @@
 .navbar-search {
   padding: 0 1em;
   margin-left: auto;
+  display: flex;
+  align-items: center;
 }

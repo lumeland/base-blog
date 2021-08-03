@@ -1,0 +1,35 @@
+search-form {
+
+}
+oom-search::part(input) {
+  border: solid 2px var(--darkgray);
+  border-radius: 4px;
+  padding: .5em;
+  background: none;
+}
+oom-search::part(label) {
+  font-weight: bold;
+}
+oom-search::part(input) {
+  border: solid 2px var(--darkgray);
+  border-radius: 4px;
+  padding: .5em;
+  background: none;
+}
+oom-search::part(items) {
+  padding: .5em;
+  margin: .5em 0;
+  box-shadow: 0 2px 3px #0003;
+  background: white;
+  width: auto;
+  min-width: 100%;
+  right: 0;
+}
+oom-search::part(item) {
+  background: none;
+  font: inherit;
+  padding: .5em 1em;
+}
+oom-search::part(active) {
+  background-color: var(--lightgray);
+}

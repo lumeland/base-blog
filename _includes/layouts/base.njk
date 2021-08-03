@@ -27,7 +27,9 @@
       {%- endfor %}
       </ul>
 
-      <search-box class="navbar-search" url="{{ '/search.json' | url }}"></search-box>
+      <div class="navbar-search">
+        <oom-search label="Search" placeholder="Post title or tag" src="{{ '/search.json' | url }}"></oom-search>
+      </div>
     </nav>
 
     <main class="{{ bodyClass }}">
