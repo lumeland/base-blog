@@ -63,11 +63,13 @@ export default class Searcher extends HTMLElement {
 
     for (const row of data) {
       const btn = this.ownerDocument.createElement("button");
-      btn.innerHTML = row.label;
+      btn.innerHTML = row.label || row.value;
       btn.value = row.value;
       btn.setAttribute("part", "item");
       btn.addEventListener("focus", () => this.activeItem = btn);
       btn.addEventListener("mouseenter", () => this.activeItem = btn);
+      const search = `${row.search || ""} ${row.label}`;
+      btn.dataset.search = slugify(search);
       btn.addEventListener(
         "click",
         () => btn.dispatchEvent(new CustomEvent("selected", { bubbles: true })),
@@ -183,7 +185,7 @@ export default class Searcher extends HTMLElement {
     query = slugify(query);
 
     this.items.forEach((item) => {
-      item.hidden = !query || slugify(item.innerText).indexOf(query) === -1;
+      item.hidden = !query || item.dataset.search.indexOf(query) === -1;
     });
 
     if (!this.focusedItem) {

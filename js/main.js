@@ -1,4 +1,4 @@
-import Searcher from "./searcher.js";
+import Searcher from "./vendor/searcher/searcher.js";
 
 customElements.define("oom-search", Searcher);
 
