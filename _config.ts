@@ -5,7 +5,7 @@ import terser from "lume/plugins/terser.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
-import gpm from "https://deno.land/x/gpm@v0.1.0/mod.ts";
+import gpm from "https://deno.land/x/gpm@v0.2.0/mod.ts";
 
 const site = lume({
   location: new URL("https://example.com/"),
