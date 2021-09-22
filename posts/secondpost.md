@@ -15,7 +15,7 @@ of disruptive innovation via workplace diversity and empowerment.
 
 ## Section Header
 
-[First post](/posts/firstpost/) [Third post](/posts/thirdpost/)
+[First post](firstpost.md) [Third post](thirdpost.md)
 
 Bring to the table win-win survival strategies to ensure proactive domination.
 At the end of the day, going forward, a new normal that has evolved from
