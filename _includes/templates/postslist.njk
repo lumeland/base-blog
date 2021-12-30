@@ -14,11 +14,10 @@
     </time>
 
     {% for tag in post.data.tags %}
-    {% for pageTag in search.pages("type=tag") %}
-    {% if pageTag.data.tag == tag %}
-    <a href="{{ pageTag.data.url  }}" class="tag">{{ tag }}</a>
+    {% set page = search.page("type=tag tag='" + tag + "'") %}
+    {% if page %}
+    <a href="{{ page.data.url  }}" class="tag">{{ tag }}</a>
     {% endif %}
-    {% endfor %}
     {% endfor %}
   </li>
 {% endfor %}
