@@ -29,4 +29,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: lume-example
-          entrypoint: server/main.ts
+          entrypoint: server.ts
