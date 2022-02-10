@@ -1,4 +1,4 @@
-name: Publish
+name: Publish on GitHub Pages
 
 on:
   push:
@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clone repository
       - uses: actions/checkout@v2
 
       - name: Setup Deno environment
@@ -16,7 +17,7 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Run lume
+      - name: Build site
         run: |
           deno run -A https://deno.land/x/lume/ci.ts --location=https://lumeland.github.io/base-blog/
 

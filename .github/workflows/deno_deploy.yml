@@ -1,0 +1,32 @@
+name: Publish on Deno Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Setup Deno environment
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Build site
+        run: |
+          deno run -A https://deno.land/x/lume/ci.ts --location=https://lume-blog.deno.dev
+
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: lume-example
+          entrypoint: server/main.ts
