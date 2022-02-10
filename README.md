@@ -60,6 +60,7 @@ Lume and with the NetlifyCMS.
   - The `--location` option with the url of the site, for example:
     `--location=https://my-blog.deno.dev`
   - The project name in the `denoland/deployctl` step with the name of your project.
+- [See a live demo](https://lume-blog.deno.dev)
 
 ### Vercel
 
