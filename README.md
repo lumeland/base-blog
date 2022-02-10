@@ -52,6 +52,15 @@ Lume and with the NetlifyCMS.
 - Enable Github Pages and select the branch `gh-pages` as source.
 - [See a live demo](https://lumeland.github.io/base-blog/)
 
+### Deno Deploy
+- [Create a project in Deno Deploy](https://deno.com/deploy) and configure it.
+  - Link to your git repository
+  - Set the GitHub Actions deployment mode.
+- Open the file `.github/workflows/deno_deploy.yml` and edit the following:
+  - The `--location` option with the url of the site, for example:
+    `--location=https://my-blog.deno.dev`
+  - The project name in the `denoland/deployctl` step with the name of your project.
+
 ### Vercel
 
 - [Get your own Lume blog on Vercel](https://vercel.com/new/git/external?repository-url=https://github.com/lumeland/base-blog)
