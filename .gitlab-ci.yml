@@ -1,0 +1,12 @@
+image: oscarotero/lume
+
+stages:
+  - pages
+
+pages:
+  stage: pages
+  script: lume --dest=public --location=https://oscarotero.gitlab.io/base-blog/
+
+  artifacts:
+    paths:
+      - public
