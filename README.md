@@ -43,14 +43,21 @@ Lume and with the NetlifyCMS.
 
 ## Deployment
 
-### Github Pages
+### GitHub Pages
 
 - [Get your own Lume blog on Github Pages](https://github.com/lumeland/base-blog/generate)
 - Open the file `.github/workflows/build.yml` and edit the `--location` option
   with the url of the site, for example
   `--location=https://username.github.io/repo/`
 - Enable Github Pages and select the branch `gh-pages` as source.
-- [See a live demo](https://lumeland.github.io/base-blog/)
+- [See a live demo](https://lumeland.github.io/base-blog/
+
+### GitLab Pages
+
+- Open the file `.github/workflows/build.yml` and edit the `--location` option
+  with the url of the site, for example
+  `--location=https://username.gitlab.io/repo/`
+- [See a live demo](https://oscarotero.gitlab.io/base-blog/)
 
 ### Deno Deploy
 - [Create a project in Deno Deploy](https://deno.com/deploy) and configure it.
