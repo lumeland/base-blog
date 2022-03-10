@@ -67,7 +67,8 @@ Lume and with the NetlifyCMS.
 - Open the file `.github/workflows/deno_deploy.yml` and edit the following:
   - The `--location` option with the url of the site, for example:
     `--location=https://my-blog.deno.dev`
-  - The project name in the `denoland/deployctl` step with the name of your project.
+  - The project name in the `denoland/deployctl` step with the name of your
+    project.
 - [See a live demo](https://lume-blog.deno.dev)
 
 ### Vercel
@@ -97,3 +98,32 @@ Lume and with the NetlifyCMS.
 - Open the `.fleek.json` file and edit the
   `--location=https://example.on.fleek.co` option with your own domain.
 - [See a live demo](https://lume-blog.on.fleek.co/)
+
+### Cloudflare Pages
+
+- Configure the project with the following values:
+  - **Build Command:**
+    `curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts --location=https://example.pages.dev/`.
+    Edit the `--location` option with the name of your domain.
+  - **Output directory:** `_site`
+- [See a live demo](https://base-blog.pages.dev/)
+
+### AWS Amplify
+
+- Configure the `amplify.yml` file with the following values:
+  ```yml
+  version: 1
+  frontend:
+    phases:
+      build:
+        commands:
+          - curl -fsSL https://deno.land/x/install/install.sh | sh
+          - /root/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts
+    artifacts:
+      baseDirectory: /_site
+      files:
+        - '**/*'
+    cache:
+      paths: []
+  ```
+- [See a live demo](https://master.docjzml5t5if1.amplifyapp.com/)
