@@ -60,6 +60,7 @@ Lume and with the NetlifyCMS.
 - [See a live demo](https://oscarotero.gitlab.io/base-blog/)
 
 ### Deno Deploy
+
 - [Create a project in Deno Deploy](https://deno.com/deploy) and configure it.
   - Link to your git repository
   - Set the GitHub Actions deployment mode.
