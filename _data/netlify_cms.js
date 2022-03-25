@@ -27,7 +27,7 @@ config.collections.push({
     field("description"),
     field("date", "datetime"),
     field("tags", "list"),
-    field("draft", "boolean"),
+    field("draft", "boolean", { required: false }),
     field("body", "markdown"),
   ],
 });
