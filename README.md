@@ -50,7 +50,7 @@ Lume and with the NetlifyCMS.
   with the url of the site, for example
   `--location=https://username.github.io/repo/`
 - Enable Github Pages and select the branch `gh-pages` as source.
-- [See a live demo](https://lumeland.github.io/base-blog/
+- [See a live demo](https://lumeland.github.io/base-blog/)
 
 ### GitLab Pages
 
