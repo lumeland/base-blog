@@ -76,7 +76,7 @@ Lume and with the NetlifyCMS.
 - [Get your own Lume blog on Vercel](https://vercel.com/new/git/external?repository-url=https://github.com/lumeland/base-blog)
 - You need to config your the project manually with the following values:
   - **Build Command:**
-    `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno task build --location=https://example.vercel.app/`.
+    `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts --location=https://example.vercel.app/`.
     Edit the `--location` option with the name of your domain.
   - **Output directory:** `_site`
 - [See a live demo](https://lume-blog.vercel.app/)
@@ -103,7 +103,7 @@ Lume and with the NetlifyCMS.
 
 - Configure the project with the following values:
   - **Build Command:**
-    `curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno task build --location=https://example.pages.dev/`.
+    `curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts --location=https://example.pages.dev/`.
     Edit the `--location` option with the name of your domain.
   - **Output directory:** `_site`
 - [See a live demo](https://base-blog.pages.dev/)
@@ -118,7 +118,7 @@ Lume and with the NetlifyCMS.
       build:
         commands:
           - curl -fsSL https://deno.land/x/install/install.sh | sh
-          - /root/.deno/bin/deno task build
+          - /root/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts
     artifacts:
       baseDirectory: /_site
       files:
