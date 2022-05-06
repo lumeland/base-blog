@@ -1,11 +1,11 @@
-image: oscarotero/lume
+image: denoland/deno
 
 stages:
   - pages
 
 pages:
   stage: pages
-  script: lume --dest=public --location=https://oscarotero.gitlab.io/base-blog/
+  script: deno task build --dest=public --location=https://oscarotero.gitlab.io/base-blog/
 
   artifacts:
     paths:

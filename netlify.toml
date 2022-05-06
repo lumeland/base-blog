@@ -2,6 +2,6 @@
   publish = "_site"
   command = """
     curl -fsSL https://deno.land/x/install/install.sh | sh && \
-    /opt/buildhome/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts \
+    /opt/buildhome/.deno/bin/deno task build \
       --location=https://deno-blog.netlify.app/ \
   """
