@@ -1,7 +1,7 @@
 {
   "build": {
-    "image": "oscarotero/lume",
-    "command": "lume --location=https://lume-blog.on.fleek.co",
+    "image": "denoland/deno",
+    "command": "deno task build --location=https://lume-blog.on.fleek.co",
     "publicDir": "_site"
   }
 }
