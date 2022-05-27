@@ -1,3 +1,7 @@
+import f from "https://deno.land/x/netlify_cms_config@v0.1.0/mod.ts";
+
+f.defaultRequired = false;
+
 const config = {
   backend: {
     name: "git-gateway",
@@ -8,68 +12,43 @@ const config = {
 };
 
 // Posts
-config.collections.push({
-  label: "Posts",
-  name: "posts",
-  description: "Here you can create or edit your posts",
-  folder: "posts",
-  preview: false,
-  create: true,
-  view_filters: [
-    {
-      label: "Drafts",
-      field: "draft",
-      pattern: true,
-    },
-  ],
-  fields: [
-    field("title"),
-    field("description"),
-    field("date", "datetime"),
-    field("tags", "list"),
-    field("draft", "boolean", { required: false }),
-    field("body", "markdown"),
-  ],
-});
+config.collections.push(
+  f.folder("Posts", "posts")
+    .description("Here you can create or edit your posts")
+    .preview(false)
+    .create(true)
+    .viewFilter("Draft", "draft", true)
+    .fields([
+      f.string("Title"),
+      f.string("Description"),
+      f.datetime("Date"),
+      f.list("Tags"),
+      f.boolean("Draft").required(false),
+      f.markdown("Body"),
+    ])
+    .toJSON(),
+);
 
 const pageFields = [
-  field("title"),
-  field("url", "string"),
-  field("body", "markdown"),
-  field("menu", "object", {
-    fields: [
-      field("visible", "boolean"),
-      field("order", "number"),
-    ],
-  }),
-  field("templateClass", "hidden"),
-  field("layout", "hidden"),
+  f.string("Title"),
+  f.string("Url"),
+  f.markdown("Body"),
+  f.object("Menu", [
+    f.boolean("Visible"),
+    f.number("Order"),
+  ]),
+  f.hidden("templateClass"),
+  f.hidden("layout"),
 ];
 
 // Individual pages
-config.collections.push({
-  label: "pages",
-  name: "pages",
-  description: "Here you can edit your individual pages",
-  preview: false,
-  files: [
-    {
-      label: "about",
-      name: "about",
-      file: "/about.md",
-      fields: pageFields,
-    },
-    {
-      label: "404",
-      name: "404",
-      file: "/404.md",
-      fields: pageFields,
-    },
-  ],
-});
+config.collections.push(
+  f.files("Pages")
+    .description("Here you can edit your individual pages")
+    .preview(false)
+    .file("About", "about.md", pageFields)
+    .file("404", "404.md", pageFields)
+    .toJSON(),
+);
 
 export default config;
-
-function field(label, widget = "string", extra = {}) {
-  return { label, name: label.toLowerCase(), widget, ...extra };
-}
