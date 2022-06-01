@@ -1,4 +1,4 @@
-import f from "https://deno.land/x/netlify_cms_config@v0.1.0/mod.ts";
+import f from "https://deno.land/x/netlify_cms_config@v0.1.1/mod.ts";
 
 f.defaultRequired = false;
 
