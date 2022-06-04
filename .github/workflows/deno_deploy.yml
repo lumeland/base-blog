@@ -20,6 +20,14 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.deno
+            ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/_config.ts', '**/import_map.json') }}
+
       - name: Build site
         run: |
           deno task build --location=https://lume-blog.deno.dev
