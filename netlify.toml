@@ -1,12 +1,6 @@
 [build]
   publish = "_site"
   command = """
-    npm install -D netlify-plugin-cache && \
     curl -fsSL https://deno.land/x/install/install.sh | sh && \
     /opt/buildhome/.deno/bin/deno task build --location=https://deno-blog.netlify.app/ \
   """
-
-[[plugins]]
-package = "netlify-plugin-cache"
-  [plugins.inputs]
-  paths = ["~/.deno", "~/.cache/deno"]
