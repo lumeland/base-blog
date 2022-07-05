@@ -1,5 +1,5 @@
-import Server from "https:/deno.land/x/lume/core/server.ts";
-import expires from "https:/deno.land/x/lume/middlewares/expires.ts";
+import Server from "lume/core/server.ts";
+import expires from "lume/middlewares/expires.ts";
 
 const server = new Server({
   port: 8000,
