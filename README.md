@@ -9,14 +9,13 @@ Lume and with the NetlifyCMS.
 
 ## Getting Started
 
-1. Clone this Repository
+1. Make sure you have [Deno installed](https://deno.land/#installation).
+2. Clone this Repository
    `git clone https://github.com/lumeland/base-blog.git my-blog-name`
-2. Edit `_data/site.yml`. Specifically have a look at `_config.js` to see if you
+3. Edit `_data/site.yml`. Specifically have a look at `_config.js` to see if you
    want to configure any option differently. See the
    [Lume documentation site](https://lume.land/).
-3. Make sure you have the latest version of Deno and lume installed:
-   `deno upgrade && lume upgrade`
-4. Run Lume `lume --serve`
+4. Run Lume with `deno task serve`.
 
 ### Implementation Notes
 
