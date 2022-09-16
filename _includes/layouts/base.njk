@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or site.title }}</title>
     <meta name="description" content="{{ description or site.description }}">
+    <link rel="canonical" href="{{ url | url(true) }}">
     <link rel="stylesheet" href="/styles.css">
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
     <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
