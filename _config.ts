@@ -23,6 +23,9 @@ site
     ui: {
       resetStyles: false,
     },
+    indexing: {
+      bundleDirectory: "pagefind"
+    }
   }))
   .use(slugifyUrls({ alphanumeric: false }))
   .use(resolveUrls())
