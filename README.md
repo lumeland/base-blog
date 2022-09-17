@@ -1,4 +1,4 @@
-# lume-base-blog
+# Lume base blog example
 
 A starter repository showing how to build a blog with the
 [Lume](https://github.com/lumeland/lume) static site generator.
