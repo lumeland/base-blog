@@ -40,7 +40,6 @@ Lume and with the NetlifyCMS.
 - `admin/` has the [NetlifyCMS](https://www.netlifycms.org/) configuration so
   you can edit or create new posts using a friendly CMS.
 
-
 ## Deployment
 
 ### GitHub Pages

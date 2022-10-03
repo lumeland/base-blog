@@ -2,11 +2,13 @@
 layout: layouts/base.njk
 bodyClass: body-tag
 ---
-<h1>Tagged “{{ tag }}”</h1>
+<div data-pagefind-body>
+  <h1>Tagged “{{ tag }}”</h1>
 
-{% set postslist = search.pages("'" + tag + "'") %}
-{% include "templates/postslist.njk" %}
+  {% set postslist = search.pages("'" + tag + "'") %}
+  {% include "templates/postslist.njk" %}
 
-<hr>
+  <hr>
 
-<p>See <a href="/tags/">all tags</a>.</p>
+  <p>See <a href="/tags/">all tags</a>.</p>
+</div>

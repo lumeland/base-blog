@@ -2,8 +2,8 @@
 layout: layouts/base.njk
 bodyClass: body-post
 ---
-<article class="post">
-  <header class="post-header">
+<article class="post" data-pagefind-body>
+  <div class="post-header">
     <h1 class="post-title">{{ title }}</h1>
 
     <nav class="post-tags">
@@ -15,7 +15,7 @@ bodyClass: body-post
     <time class="post-date" datetime="{{ date | date('DATETIME') }}">
       {{ date | date('HUMAN_DATE') }}
     </time>
-  </header>
+  </div>
 
   <div class="post-body">
     {{ content | safe }}
