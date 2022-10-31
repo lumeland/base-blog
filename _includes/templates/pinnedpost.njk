@@ -1,0 +1,24 @@
+<ul class="postList">
+  {% for post in pinnedpost %}
+  <li class="postList-post">
+    <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+      {% if post.data.title %}
+        <strong>{{ post.data.title }}</strong>
+      {% else %}
+        <code>{{ post.url }}</code>
+      {% endif %}
+    </a>
+    <br>
+    <time class="postList-date" datetime="{{ post.data.date | date('MY_FORMAT') }}">
+      {{ post.data.date | date('MY_FORMAT') }}
+    </time>
+
+    {% for tag in post.data.tags %}
+    {% set page = search.page("type=tag tag='" + tag + "'") %}
+    {% if page %}
+    <a href="{{ page.data.url  }}" class="tag">{{ tag }}</a>
+    {% endif %}
+    {% endfor %}
+  </li>
+{% endfor %}
+</ul>

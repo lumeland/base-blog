@@ -14,4 +14,11 @@ menu:
 
 <hr>
 
+<h2>Pinned Post:</h1>
+
+{% set pinnedpost = search.pages("'pinned'") %}
+{% include "templates/pinnedpost.njk" %}
+
+<hr>
+
 <p>More posts can be found in <a href="/posts/">the archive</a>.</p>
