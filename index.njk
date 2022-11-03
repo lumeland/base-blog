@@ -16,7 +16,8 @@ menu:
 
 <h2>Pinned Post:</h1>
 
-{% set pinnedpostslist  = search.pages("'pinned'") %}
+{% set pinnedpostslist  = search.pages("pinned=true") %}
+{%if pinnedpostslist.length == 0 %} <p>There are no pinned posts</p>{% endif %}
 {% include "templates/pinnedpost.njk" %}
 
 <hr>
