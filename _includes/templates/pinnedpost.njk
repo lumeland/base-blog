@@ -1,5 +1,5 @@
 <ul class="postList">
-  {% for post in pinnedpost %}
+  {% for post in pinnedpostslist %}
   <li class="postList-post">
     <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}
@@ -8,9 +8,9 @@
         <code>{{ post.url }}</code>
       {% endif %}
     </a>
-    <br>
-    <time class="postList-date" datetime="{{ post.data.date | date('MY_FORMAT') }}">
-      {{ post.data.date | date('MY_FORMAT') }}
+
+    <time class="postList-date" datetime="{{ post.data.date | date('DATETIME') }}">
+      {{ post.data.date | date('HUMAN_DATE') }}
     </time>
 
     {% for tag in post.data.tags %}
