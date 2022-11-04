@@ -1,5 +1,5 @@
 <ul class="postList">
-  {% for post in postlist or postslist %}
+  {% for post in postslist %}
   <li class="postList-post">
     <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}

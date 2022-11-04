@@ -14,9 +14,9 @@ menu:
 
 <hr>
 
-{% set postlist  = search.pages("pinned=true") %}
+{% set postslist  = search.pages("pinned=true") %}
 
-{%if postlist.length %}
+{%if postslist.length %}
   <h2>Pinned Post:</h1>
   {% include "templates/postslist.njk" %}
   <hr>
