@@ -14,12 +14,12 @@ menu:
 
 <hr>
 
-<h2>Pinned Post:</h1>
+{% set postlist  = search.pages("pinned=true") %}
 
-{% set pinnedpostslist  = search.pages("pinned=true") %}
-{%if pinnedpostslist.length == 0 %} <p>There are no pinned posts</p>{% endif %}
-{% include "templates/pinnedpost.njk" %}
-
-<hr>
+{%if postlist.length %}
+  <h2>Pinned Post:</h1>
+  {% include "templates/postslist.njk" %}
+  <hr>
+{% endif %}
 
 <p>More posts can be found in <a href="/posts/">the archive</a>.</p>
