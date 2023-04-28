@@ -7,6 +7,7 @@ import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import netlifyCMS from "lume/plugins/netlify_cms.ts";
 import pageFind from "lume/plugins/pagefind.ts";
+import sitemap from "lume/plugins/sitemap.ts";
 
 const site = lume({
   location: new URL("https://example.com/"),
@@ -19,6 +20,7 @@ site
   .use(date())
   .use(codeHighlight())
   .use(basePath())
+  .use(sitemap())
   .use(pageFind({
     ui: {
       resetStyles: false,
