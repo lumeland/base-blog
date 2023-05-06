@@ -8,6 +8,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import netlifyCMS from "lume/plugins/netlify_cms.ts";
 import pageFind from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
+import feed from "lume/plugins/feed.ts";
 
 const site = lume({
   location: new URL("https://example.com/"),
@@ -27,6 +28,18 @@ site
     },
   }))
   .use(slugifyUrls({ alphanumeric: false }))
+  .use(feed({
+    output: ["/feed.json", "/feed.xml"],
+    query: "type=posts",
+    info: {
+      title: "=site.title",
+      description: "=site.description",
+    },
+    items: {
+      title: "=title",
+      content: "$.post-body",
+    }
+  }))
   .use(resolveUrls())
   .use(netlifyCMS({ netlifyIdentity: true }));
 

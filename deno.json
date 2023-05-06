@@ -1,5 +1,7 @@
 {
-  "importMap": "import_map.json",
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v1.17.0/"
+  },
   "lock": false,
   "tasks": {
     "build": "deno task lume",
