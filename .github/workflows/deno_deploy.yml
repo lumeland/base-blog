@@ -28,5 +28,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: lume-blog
-          import-map: "./import_map.json"
+          import-map: "./deno.json"
           entrypoint: server.ts
