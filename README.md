@@ -53,7 +53,7 @@ Lume and with the NetlifyCMS.
 
 ### GitLab Pages
 
-- Open the file `.github/workflows/build.yml` and edit the `--location` option
+- Open the file `.gitlab-ci.yml` and edit the `--location` option
   with the url of the site, for example
   `--location=https://username.gitlab.io/repo/`
 - [See a live demo](https://oscarotero.gitlab.io/base-blog/)
