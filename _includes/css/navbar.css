@@ -58,4 +58,7 @@
   & .pagefind-ui__result-excerpt {
     color: var(--darkgray);
   }
+  & .pagefind-ui__search-clear {
+    border: none;
+  }
 }

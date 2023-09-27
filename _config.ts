@@ -38,7 +38,7 @@ site
     items: {
       title: "=title",
       content: "$.post-body",
-    }
+    },
   }))
   .use(resolveUrls())
   .use(netlifyCMS({ netlifyIdentity: true }));
