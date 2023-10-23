@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "build": "npx deno-bin task lume",
-    "start": "serve _site/"
-  },
-  "dependencies": {
-    "serve": "^14.2.1"
-  }
-}
