@@ -4,13 +4,18 @@ on:
   push:
     branches: [ master ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Deno environment
         uses: denoland/setup-deno@v1
@@ -18,12 +23,16 @@ jobs:
           deno-version: v1.x
 
       - name: Build site
-        run: |
-          deno task build --location=https://lumeland.github.io/base-blog/
-
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2.0.1
+        run: deno task build --location=https://lumeland.github.io/base-blog/
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          build_dir: _site
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
