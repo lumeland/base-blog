@@ -19,8 +19,8 @@
       <ul class="navbar-links">
       {%- for entry in search.pages("menu.visible=true", "menu.order") %}
         <li>
-          <a href="{{ entry.data.url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
-            {{ entry.data.menu.title or entry.data.title }}
+          <a href="{{ entry.url }}"{% if entry.url == url %} aria-current="page"{% endif %}>
+            {{ entry.menu.title or entry.title }}
           </a>
         </li>
       {%- endfor %}

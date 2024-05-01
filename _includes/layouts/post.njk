@@ -29,14 +29,14 @@ bodyClass: body-post
     {%- set previousPost = search.previousPage(url, "type=posts") %}
     {%- if previousPost %}
     <li>
-      ← Previous: <a href="{{ previousPost.data.url }}" rel="prev">{{ previousPost.data.title }}</a>
+      ← Previous: <a href="{{ previousPost.url }}" rel="prev">{{ previousPost.title }}</a>
     </li>
     {% endif %}
 
     {%- set nextPost = search.nextPage(url, "type=posts") %}
     {%- if nextPost %}
     <li>
-      <strong>Next: <a href="{{ nextPost.data.url }}" rel="next">{{ nextPost.data.title }}</a> →</strong>
+      <strong>Next: <a href="{{ nextPost.url }}" rel="next">{{ nextPost.title }}</a> →</strong>
     </li>
     {% endif %}
   </ul>
